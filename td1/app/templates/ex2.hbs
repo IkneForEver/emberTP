@@ -1,0 +1,15 @@
+<h1 class='text-center'>
+	{{plural model.countActive 'Aucun service selectionné' 'Un service selectionné' (concat model.countActive ' services selectionnés')}}
+</h1>
+
+{{#each model.service as |serv|}}
+	<div class="container">
+		<button {{action 'toggleActive' serv}} class="btn btn-{{if serv.active 'success' 'info'}} btn-block btn-lg">{{serv.name}}</button>
+		<h3 class='text-center'>{{format-currency serv.price}}</h3>
+	</div>
+
+	<br/>
+{{/each}}
+
+<h1 class='text-center'>Total: {{format-currency model.sumActive}}</h1>
+{{outlet}}

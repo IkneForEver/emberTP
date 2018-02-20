@@ -1,0 +1,6 @@
+{{#each elements as |elm|}}
+	<option value={{elm.id}} selected={{array-contains selectedIds elm.id}}>{{elm.title}}</option>
+	{{elm}}
+{{/each}}
+
+{{yield}}

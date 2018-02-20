@@ -1,0 +1,21 @@
+{{textarea value=model.content class='form-control' maxlength=model.MAX}}
+
+<button{{action 'save' model}} class='btn btn-primary'>
+	Sauvegarder
+</button>
+
+<button{{action 'clear' model}} class='btn btn-primary'>
+	Clear
+</button>
+
+<div class="{{model.style}}" style="transition: background-color 1s;">
+	{{model.size}}/{{model.MAX}} caracteres restants
+</div>
+
+{{#if model.alertVisible}}
+
+<div class='alert alert-info'>
+	{{model.info}}
+
+</div>
+{{/if}}

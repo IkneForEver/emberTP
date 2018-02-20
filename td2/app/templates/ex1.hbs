@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="col">
+		{{multi-select elements=model.dispoItems selectedIds=model.dispoItemsIds_}}
+	</div>
+	<div class="col-1">
+		<button class="btn btn-outline-info w-100 h-25" {{action 'addTo' model.dispoItems model.includedItems model.dispoItems_}}> &rsaquo; </button>
+		<button class="btn btn-outline-info w-100 h-25" {{action 'addTo' model.dispoItems model.includedItems model.dispoItems}}> &rsaquo;&rsaquo; </button>
+		<button class="btn btn-outline-info w-100 h-25" {{action 'addTo' model.includedItems model.dispoItems model.includedItems_}}> &lsaquo; </button>
+		<button class="btn btn-outline-info w-100 h-25" {{action 'addTo' model.includedItems model.dispoItems model.includedItems}}> &lsaquo;&lsaquo; </button>
+	</div>
+	<div class="col">
+		{{multi-select elements=model.includedItems selectedIds=model.includedItemsIds_}}
+	</div>
+	
+</div>
+{{outlet}}
